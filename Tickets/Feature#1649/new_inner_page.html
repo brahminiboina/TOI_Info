@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>wiflix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="google" content="notranslate" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+		   <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		  <link rel="stylesheet" href="css/ss.css">
+		  
+		 <script src="http://code.jquery.com/jquery-1.12.2.js"></script>
+		  
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	
+	<script src="jquery.artarax.rating.star.js"></script>
+		   <script>
+               
+
+                function showDropdown() {
+                    document.getElementById("myDropdown").classList.toggle("show");
+                }
+
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function(event) {
+                    if (!event.target.matches('.dropbtn')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        var i;
+                        for (i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('show')) {
+                                openDropdown.classList.remove('show');
+                            }
+                        }
+                    }
+                }
+            </script>
+    <style>
+	
+	 
+	body{background:#000;} 
+/* list css start here */
+ul.aside-list {
+	list-style-type: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	margin: 0;
+	padding: 0;
+}ul.aside-list li {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	background-color: #000;
+}ul.aside-list {
+	list-style-type: none;
+}ul.aside-list li > a {
+	position: relative;
+	display: block;
+}ul.aside-list li > a:hover {
+	background-color: rgba(255, 255, 255, .1);
+	zoom: 1;
+}ul.aside-list li .media {
+	padding: 10px;
+}.media:first-child {
+	margin-top: 0;
+}
+.media-left{width:200px;height:125px;}
+.media-left img{width:100%;height:100%;}
+
+ul.aside-list li .media .media-left {
+	padding-right: 15px;
+}.media-body, .media-left, .media-right {
+	display: table-cell;
+	vertical-align: top;
+}.media, .media-body {
+	overflow: hidden;
+	zoom: 1;
+}ul.aside-list li .media .media-body {
+	display: table-cell;
+	vertical-align: middle;
+	/*height: 50px;*/
+	font-size: 16px;
+	font-weight: 400;
+	color: #fff;font-family: Roboto, Arial, sans-serif;
+}aside.article-aside .scrollbar-container .media-heading {
+	font-size: 14px;font-family: Roboto, Arial, sans-serif;
+}
+ul.aside-list li .media {
+	padding: 10px;
+}
+.video_rec .col-lg-6, .video_rec .col-md-12 {
+	padding: 0px;
+}
+.aside-list a{text-decoration: none;}
+.card {
+	background: transparent;
+	border: noe;
+	border: none;
+	border-radius: 0px;
+}
+.video_rec{padding:64px 96px 64px 96px;}
+.top-bar.ytmusic-player-page {
+	display: flex;
+	flex: none;
+	padding: 8px;
+	align-items: center;
+	border-bottom: 1px solid rgba(255, 255, 255, .3);
+}.queue-title.ytmusic-player-page {
+	font-family: Roboto, Arial, sans-serif;
+	font-size: var(--ytmusic-title-2_-_font-size);
+	line-height: var(--ytmusic-title-2_-_line-height);
+	font-weight: 500;
+	color: #fff;
+	--yt-endpoint-color: #fff;
+	--yt-endpoint-hover-color: #fff;
+	--yt-endpoint-visited-color: #fff;
+	display: block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #aaa;
+	flex: 1;
+}
+.mediastars {
+	display: inline-block;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}.star-rating {
+  line-height:32px;
+  font-size:1.25em;text-align: right;
+}
+
+.star-rating .fa-star{color: yellow;}
+.aside-container{
+	width: 100%;
+	position: fixed;
+	margin-left:64px;
+	height: 100%;
+}
+@media only screen and (max-width: 991px) {.video_rec{padding:0px;}
+.side{	margin-left: 0px!important;}
+.jbhBLB, .fXnhlt {	margin-left: 7px;}
+
+}
+@media only screen and (max-width: 480px) {
+.media-left{width:150px;height:100px;}
+ul.aside-list {	
+	margin-bottom: 54px!important;	
+}
+}.side{
+ /*position:fixed;*/width:100%;height:100%; margin-left:64px;
+}
+
+.scroll-area{
+  width:100%;
+  height:calc(100% - 200px);
+   float:left;
+  /*overflow-y:scroll;*/
+}
+/* list css end here*/
+/* video details css start here */
+._3oaKY {
+	padding: 1.25rem 0;
+}
+.jbhBLB {
+	color: White;
+	font-size: 1.80rem;
+	font-family: Roboto, Arial, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.04rem;
+	line-height: 1.11111;
+	margin-bottom: 1.25rem;
+	width: 100%;
+}._3oaKY ._1elk7, ._3oaKY .taFHO {
+	margin-bottom: .5rem;
+}.fXnhlt {
+	color: rgb(132, 152, 164);
+	font-size: 0.875rem;
+	font-family: Roboto, Arial, sans-serif;
+	font-weight: normal;
+	letter-spacing: 0.01rem;
+	line-height: 1.42857;
+	margin-bottom: 1.25rem;
+	width: 100%;color: White;
+}time {
+	cursor: default;
+}.iris_link {
+	appearance: none;
+	padding: 0;
+	border: 0;
+	background-color: transparent;
+	font-size: inherit;
+	color: #00ADEF;
+	-webkit-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}.clip_info-more {
+	display: inline;
+	font-weight: 400;
+}.iris_link--gray-2 {
+	color: #007dbe;
+}.clip_info-more::before {
+	margin: 0 .4375rem;
+	color: #D0D8DB;
+	content: '|';
+}.clip_info-more {
+	font-weight: 400;
+}
+ .meta {
+    margin-bottom: 10px;padding:0px;width: 100%;
+} .meta li {
+	display: inline-block;
+	font-size: 12px;
+	color: #777;
+	margin: 5px;font-family: Roboto, Arial, sans-serif;
+}
+.meta a:hover{
+    color:#fff;
+} 
+.fa-user::before {
+	content: "\f007";
+}  
+
+/* 3dots css start here*/
+.dropdown {
+	position: absolute;
+	display: inline-block;
+	right: 0em;z-index:5;
+top: 0px;
+}.dropbtn {
+	
+	position: fixed;
+	color: white;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}.btn-left, .btn-right {
+	position: absolute;
+	top: 0.24em;
+}.btn-right {
+	right: 0.4em;
+}.icons li {
+	background: none repeat scroll 0 0 #fff;
+	height: 5px;
+	width: 5px;
+	line-height: 0;
+	list-style: none outside none;
+	margin-right: 15px;
+	margin-top: 3px;
+	vertical-align: top;
+	border-radius: 50%;
+	pointer-events: none;
+}.show {
+	display: block!important;
+}.dropdown-content {
+	display: none;
+	position: relative;
+	margin-top: 40px;
+background-color: #fff;
+	min-width: 160px;
+	overflow: auto;
+	
+	z-index: 6;
+}.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}.dropdown a:hover {
+	background-color: #f1f1f1;
+}
+/* subscribe button start here */
+ #ora_nge_outline {
+	text-align: center;
+	margin: 10px 0px;
+	display: inline-grid;
+	width: 100%;padding: 0 5px;
+}#ora_nge_outline > a {
+	background: #fedf0b;
+	border-radius: 20px;
+	font-weight: 700;
+	color: #000;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+	padding: 10px 40px 10px 40px;
+	font-family: Roboto, Arial, sans-serif;
+}
+/* title and description toggle div css start here*/
+	.slim-video-metadata-header {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    padding: 12px;
+}.slim-video-metadata-title-and-badges,  {
+    min-width: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}c3-icon {
+    display: inline-block;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    stroke: none;color:#fff;
+}ytm-standalone-badge-supported-renderer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}.slim-video-metadata-title {
+margin-top: 0px;
+    -webkit-line-clamp: initial;
+    max-height: none;    overflow: hidden;
+    /*display: -webkit-box;*/display:inline-block;
+    line-height: 1.25;
+    max-height: 2.5em;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    font-weight: normal;color:#fff;font-size:18px;
+}ytm-badge-supported-renderer {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}c3-icon>svg {
+    width: 100%;
+    height: 100%;
+}.secondary-text {
+	color: #e0dede;
+}
+
+.slim-video-metadata-info {
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 12px;
+    border-top: 1px solid hsla(0,0%,53.3%,.4);
+}.user-text {
+    white-space: pre-wrap;
+}.slim-video-metadata-description>a, .metadata-row-item>a {
+    color: #1679c5;
+}
+.slim-video-metadata-info{display:none;}
+
+
+/* arrow toggle css start here*/
+.arrow-down {
+  width: 30px;
+  height: 30px;margin-top: 7px;cursor:pointer;
+ }
+
+.arrow-down.active {
+ 
+}
+
+.arrow-down:before, .arrow-down:after {
+  content: "";
+  display: block;
+  width: 11px;
+  height: 4px;
+  background: white;
+  position: absolute;
+  /*top: 20px;*/
+  transition: transform .5s;
+}
+
+.arrow-down:before {
+  right: 21px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transform: rotate(45deg);
+}
+
+.arrow-down:after {
+  right: 16px;
+  transform: rotate(-45deg);
+}
+
+.arrow-down.active:before {
+  transform: rotate(-45deg);
+}
+
+.arrow-down.active:after {
+  transform: rotate(45deg);
+}
+.btnyellow:hover, .btnyellow:focus, .btnyellow.focus, .btngreen:hover, .btngreen:focus, .btngreen.focus {
+	color: #dbdada;
+	text-decoration: none;
+}
+/* watch and trailer button css
+.view_trailer {
+	padding: 0 5px;margin-bottom: 0px;
+margin-top: 5px;
+}
+.btnyellow {
+	color: #ffda00;
+	border: 2px solid #ffda00;
+}
+.btngreen {
+	color: #98dba1;
+	border: 2px solid #98dba1;float: right;
+}*/
+
+/* rating star css start here 
+.rating-star{padding:0px 0px 0px 10px;display:inline-block}*/
+.rating-star {
+	padding: 7px 0px 0px 0px;
+	display: inline-block;
+	vertical-align: top;
+}
+.rating-star span{
+    width:10px;
+    height:10px;
+    display:block;
+    float:left;
+    background-image:url("star-rate.png");
+    background-repeat:no-repeat;
+    background-size:100%;
+    margin:0px 2px;
+    cursor:pointer;
+    background-position:top;
+  }
+
+  .rating-star span.clicked,.rating-star span.hover{
+    background-position:bottom;
+  }
+  
+  /* meta tage css here*/.glyphicon {
+	
+	font-size: 20px;
+}
+.meta a {
+	color: grey;
+}
+
+.slim-video-metadata-actions {
+    padding: 0 12px 12px;
+    color: hsla(0,0%,6.7%,.6);
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -ms-flex-pack: justify;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}.slim-video-metadata-title-and-badges {
+    min-width: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+.item {
+    margin-top: 12px;
+    display: block;
+}
+/* modal popup css here */
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}.modal {
+  text-align: center;
+}.nav-tabs > li > a:hover {color: #2a6496;}
+.nav-tabs > li > a {
+	color:#000;
+}
+@media (min-width:768px) {
+ .modal-dialog {
+  width:400px;
+  margin:30px auto
+ }}
+ 
+ .tab-content {
+	padding: 0px 30px;
+}
+
+/* modal design-1 */
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+
+.form-label-group {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.form-label-group input {
+  height: auto;
+  border-radius: 2rem;
+}
+
+.form-label-group>input,
+.form-label-group>label {
+  padding: 13px 15px;
+}
+
+.form-label-group>label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+ 
+  line-height: 1.5;
+  color: #495057;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  transition: all .1s ease-in-out;
+}
+
+.form-label-group input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input:-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-ms-input-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::-moz-placeholder {
+  color: transparent;
+}
+
+.form-label-group input::placeholder {
+  color: transparent;
+}
+
+.form-label-group input:not(:placeholder-shown) {
+  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-bottom: calc(var(--input-padding-y) / 3);
+}
+
+.form-label-group input:not(:placeholder-shown)~label {
+  padding-top: calc(var(--input-padding-y) / 3);
+  padding-bottom: calc(var(--input-padding-y) / 3);
+  font-size: 12px;
+  color: #777;
+}
+
+.btn-google {
+  color: white;
+  background-color: #ea4335;
+}
+
+.btn-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+#login-form .btn-lg, #login-form .btn-group-lg > .btn {
+	padding: 1.5rem;
+	
+}
+#login-form label{
+font-weight:normal;
+
+}.custom-control-label{
+font-size:12px;font-weight:normal;
+margin-bottom:9px;
+}
+.modal-header {
+	
+	border-bottom:none;
+}
+
+
+/* popup2 */
+.login-register-form2 .modal-backdrop{
+	
+	background: #092756;
+	 background: -moz-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%),-moz-linear-gradient(top, rgba(57,173,219,.25) 0%, rgba(42,60,87,.4) 100%), -moz-linear-gradient(-45deg, #670d10 0%, #092756 100%); 
+	 background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -webkit-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -webkit-linear-gradient(-45deg, #670d10 0%,#092756 100%); 
+	 background: -o-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -o-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -o-linear-gradient(-45deg, #670d10 0%,#092756 100%); 
+	 background: -ms-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), -ms-linear-gradient(top, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), -ms-linear-gradient(-45deg, #670d10 0%,#092756 100%); 
+	background: -webkit-radial-gradient(0% 100%, ellipse cover, rgba(104,128,138,.4) 10%,rgba(138,114,76,0) 40%), linear-gradient(to bottom, rgba(57,173,219,.25) 0%,rgba(42,60,87,.4) 100%), linear-gradient(135deg, #670d10 0%,#092756 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3E1D6D', endColorstr='#092756',GradientType=1 ); 
+	opacity: 9;
+	
+}
+
+.login-register-form2 .modal-content{
+background:transparent;
+border:none;
+box-shadow: none;
+}
+
+.login-register-form2 input {
+	width: 100%;
+	margin-bottom: 10px;
+	background: rgba(0,0,0,0.3);
+	border: none;
+	outline: none;
+	padding: 10px;
+	font-size: 13px;
+	color: #fff;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 4px;
+	box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+	-webkit-transition: box-shadow .5s ease;
+	-moz-transition: box-shadow .5s ease;
+	-o-transition: box-shadow .5s ease;
+	-ms-transition: box-shadow .5s ease;
+	transition: box-shadow .5s ease;
+}
+.login-register-form2 .custom-control-label {color:#fff;}
+
+.login-register-form2 .btn-primary {
+	background-color: #4a77d4;
+	background-image: -moz-linear-gradient(top, #6eb6de, #4a77d4);
+	background-image: -ms-linear-gradient(top, #6eb6de, #4a77d4);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#6eb6de), to(#4a77d4));
+	background-image: -webkit-linear-gradient(top, #6eb6de, #4a77d4);
+	background-image: -o-linear-gradient(top, #6eb6de, #4a77d4);
+	background-image: linear-gradient(top, #6eb6de, #4a77d4);
+	background-repeat: repeat-x;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr=#6eb6de, endColorstr=#4a77d4, GradientType=0);
+	border: 1px solid #3762bc;
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius:5px;
+}
+.login-register-form2 hr{
+border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-google  {background-image: linear-gradient(to right, #FF512F 0%, #DD2476 51%, #FF512F 100%);
+text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius:5px!important;
+}
+.btn-google:hover { background-position: right center; }
+.btn-facebook{background-image: linear-gradient(to right, #1e3c72 0%, #2a5298 51%, #1e3c72 100%);
+text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.5);
+	border-radius:5px!important;}
+.btn-facebook:hover { background-position: right center; }
+.login-register-form2 .nav-tabs {
+	border-bottom: 1px solid #6f6f6f!important;
+}
+.login-register-form2 .nav-tabs > li.active > a, .login-register-form2 .nav-tabs > li.active > a:hover, .login-register-form2 .nav-tabs > li.active > a:focus {
+	
+	background-color: transparent; 
+	border: 1px solid #6f6f6f; 
+	border-bottom-color: transparent;
+	color:#e5e5e5;
+}
+*:focus {
+    outline: none;
+}
+br {
+	margin-bottom: 11px;
+}
+.channel, .vide_details {
+	font-size: 1.3rem;
+	font-weight: 400;
+	line-height: 1.8rem;
+	text-transform: none;
+	color: #fff;
+	display: inline-block;
+	vertical-align: top;
+}
+.vide_details  {
+	width: 100%;
+} .new{color:red;}
+.views, .time{padding-right:10px;color:#afafaf;}
+.views:hover, .time:hover, .new:hover{color:#fff;}
+.media-heading {
+	margin-top: 0;
+	margin-bottom: 5px;    display: -webkit-box;
+	max-height: 3.2rem;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: normal;
+	-webkit-line-clamp: 2;
+	line-height: 1.6rem;
+}
+@media only screen and (max-width: 399px) {
+ .views{width:100%;
+	display:inline-block;}
+}
+ </style>
+	
+	
+	
+  <script type="text/javascript">
+
+
+   $(window).load(function(){
+ 
+ /*      
+$('.navigation-menu').mouseover(function(){
+    $(this).find('.sub-menu.theme-lakira').slideDown();
+});
+$('.navigation-menu').mouseleave(function(){
+    $(this).find('.sub-menu.theme-lakira').slideUp();
+});
+
+$('.navigation-menu').trigger('mouseover');
+*/
+
+  
+	
+	$(function() {
+	
+	$(".arrow-down").click(function(){
+  $(".slim-video-metadata-info").toggle();
+});
+	
+  $('.navigation-menu').hover(function() {
+    $('.sub-menu.theme-lakira').slideDown();
+  }, function() {
+    $('.sub-menu.theme-lakira').slideUp();
+  });
+});  });
+
+</script>
+	
+	
+  </head>
+  <body style='margin:0;'>
+  
+ <div class="pinning-header">
+   <div class="pinning-header-container" style="top: 0px; position: relative;">
+      <div class="main-header has-billboard">
+         <a aria-label="Netflix" class="logo  active" href="/browse"><img src="css/logo.png"></a>
+         <ul class="tabbed-primary-navigation" role="navigation">
+            <li class="navigation-menu"><a class="menu-trigger" >Browse</a>
+			<div class="sub-menu theme-lakira">
+		<div class="callout-arrow"></div>
+		<div class="topbar"></div>
+		<ul class="sub-menu-list"><li class="sub-menu-item"><a class="current active" href="/browse">Home</a></li><li class="sub-menu-item"><a href="/browse/genre/83">TV Shows</a></li><li class="sub-menu-item"><a href="/browse/genre/34399">Movies</a></li><li class="sub-menu-item"><a href="/browse/genre/1592210">Recently Added</a></li><li class="sub-menu-item"><a href="/browse/my-list">My List</a></li></ul>
+			
+			</div>
+			</li>
+            <li class="navigation-tab"><a class="current active" href="/browse">Home</a></li>
+            <li class="navigation-tab"><a href="/browse/genre/83">TV Shows</a></li>
+            <li class="navigation-tab"><a href="/browse/genre/34399">Movies</a></li>
+            <li class="navigation-tab"><a href="/browse/genre/1592210">Recently Added</a></li>
+            <li class="navigation-tab"><a href="/browse/my-list">My List</a></li>
+         </ul>
+         
+      </div>
+	  
+	  <div class="dropdown">
+                    <!-- three dots -->
+                    <ul class="dropbtn icons btn-right showLeft" onclick="showDropdown()">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- menu -->
+                    <div id="myDropdown" class="dropdown-content">
+                        <a href="#home">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </div>
+   </div>
+</div>
+     
+      <div class="content video_rec">
+        <div class="container-fluid">
+		
+		 <div class="row">
+		 
+		 <div class="col-lg-6 col-md-12">
+		
+       <div  style="background-image:url(http://dev.wicore.in/wigames/AS?cid=1586&cip=S);height:auto;width:100%;">
+       <video controls autoplay controlsList="nodownload" src='https://dev.wicore.in/wiapp/ClickRD?cust_id=10&service_id=7&item_id=1586&item_type=C&action=Visited&rdurl=http%3A%2F%2Fdev.wicore.in%2Fwigames%2FClickRD%3Fcid%3D1586%26uid%3D42412236000%26rurl%3Dhttp%253A%252F%252Fdev.wicore.in%253A8082%252F4%252FVideos%252F1904%252F0817%252F1059%252FAlpha%252Ftrailers%252FALPHA_1080p.mp4' style='width:100%; height:100%;float:left'></video>
+		   
+		   <!--- <video controls preload="none" style="width:100%; height:100%;">
+					<source src="https://dev.wicore.in/wiapp/ClickRD?cust_id=10&service_id=7&item_id=1586&item_type=C&action=Visited&rdurl=http%3A%2F%2Fdev.wicore.in%2Fwigames%2FClickRD%3Fcid%3D1586%26uid%3D42412236000%26rurl%3Dhttp%253A%252F%252Fdev.wicore.in%253A8082%252F4%252FVideos%252F1904%252F0817%252F1059%252FAlpha%252Ftrailers%252FALPHA_1080p.mp4" type="video/mp4">   
+				  </video> --->
+	   
+         </div>
+		 
+		 
+		 
+		 <div class="_3oaKY col-lg-12 col-md-12">
+		 <!-- this is the parent div -->		 
+			<p class="view_trailer">
+				<a href="#" class="btn btn-md btnyellow">
+					<span class="glyphicon glyphicon-play"></span> WATCH TRAILER
+				</a>
+				<a href="#" class="btn btn-md btngreen">
+					<span class="glyphicon glyphicon-play"></span> WATCH MOVIE
+				</a>
+			</p>	  
+			<div class="item">
+				<div class="slim-video-metadata-header">
+					<div class="slim-video-metadata-title-and-badges">
+						<ytm-standalone-badge-supported-renderer class="top-standalone-badge"></ytm-standalone-badge-supported-renderer>
+						<h2 class="slim-video-metadata-title">Ice Cream </h2>
+							<div class="rating-star">
+								<span data-id="100" data-val="1"></span>
+								<span data-id="100" data-val="2"></span>
+								<span data-id="100" data-val="3"></span>
+								<span data-id="100" data-val="4"></span>
+								<span data-id="100" data-val="5"></span>
+							</div>						
+					</div>
+					<div class="arrow-down" onclick="this.classList.toggle('active')"></div>  
+				</div>
+		 
+				<div class="slim-video-metadata-actions">
+					<ul class="meta">
+						<li>
+							<a href="#0">
+							<i class="glyphicon glyphicon-eye-open" aria-hidden="true"></i>
+							25M Views
+							</a>
+						</li>
+						<li>
+							<a href="#0">
+							<i class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></i>
+							+85K
+							</a>
+						</li>
+						<li>
+							<a href="#0">
+							<i class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></i>
+							1k
+							</a>
+						</li>
+						<li>
+							<a href="#0">
+							<i class="glyphicon glyphicon-share-alt" aria-hidden="true"></i>
+							Share
+							</a>
+						</li>
+						<li>
+							<a href="#0">
+							<i class="glyphicon glyphicon-calendar" aria-hidden="true"></i>
+							1 may 2019
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		 		 	 
+		
+		 
+		 
+		 
+		<!-- <h1 class="taFHO sc-jqCOkK jbhBLB" ><span class="_1fHNK">video name</span></h1>
+		 
+		<p class="_1elk7 sc-jqCOkK fXnhlt" format="alternative"><time datetime="2017-06-22 12:16:04" title="Thursday, June 22, 2017 at 12:16 PM EST">2 years ago</time><a class="clip_info-more iris_link iris_link--gray-2" href="#more_info" aria-label="View more information about this video">More</a></p>
+		
+		
+		<ul class="meta">
+											<li>
+												<a href="#0">
+													<i class="fa fa-user" aria-hidden="true"></i>
+													Admin
+												</a>
+											</li>
+											<li>
+												<a href="#0">
+													<i class="fa fa-folder-open" aria-hidden="true"></i>
+													WordPress
+												</a>
+											</li>
+											<li>
+												<a href="#0">
+													<i class="fa fa-calendar" aria-hidden="true"></i>
+													6 augu 2017
+												</a>
+											</li>
+											
+										</ul>-->
+				<div id="ora_nge_outline" class="bill_urls">
+					<a data-toggle="modal" data-target=".login-register-form">Subscribe service @ Rs 1</a>
+					<br/>
+					<a data-toggle="modal" data-target=".login-register-form2">Subscribe service @ Rs 1</a>
+				</div>
+				<div class="slim-video-metadata-info user-text"><div>Published on Mar 28, 2017</div>
+					<div class="slim-video-metadata-description">
+						Bean wants an ice cream from the ice cream van, but ends up serving himself - along with every 		kid 	in town! Stay tuned:
+						<a href="https://www.youtube.com/channel/UCkAGrHCLFmlK3H2kd6isipg?sub_confirmation=1">https://www.youtube.com/channel/UCkAG...</a>
+						Welcome to the official Mr Bean Channel. Here you will find all of your favourite Mr Bean moments from the classic series with Rowan Atkinson and his new animated adventures. Make sure to subscribe and never miss a Full Episode of Mr Bean, or Mr Bean Compilations and clips as well as originals including Mr Bean Comics.
+
+						To find out more about Mr Bean visit:
+						Mr Bean on Facebook
+					</div>
+				</div>
+		</div>
+		
+	</div>
+		 
+       <div class="col-lg-6 col-md-12">
+          <div class="side">
+            <div class="scroll-area">
+                <div class="top-bar style-scope ytmusic-player-page">
+				<h2  class="queue-title style-scope ytmusic-player-page"> Queue</h2></div>
+								<ul class="aside-list">
+								<!-- li loop start here-->
+								<li>
+									<a href="#"  class="active">
+										<div class="media">
+											<div class="media-left">
+												<img src="http://dev.wicore.in/wigames/AS?cid=1586&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" >
+											</div>
+												<div class="media-body">
+													<p class="media-heading">Alpha Official Trailer1 (2018) Kodi Smit-McPhee, Movie HD </p>
+														<div class="mediastars">
+															<div class="rating-star">
+															<span data-id="100" data-val="1"></span>
+															<span data-id="100" data-val="2"></span>
+															<span data-id="100" data-val="3"></span>
+															<span data-id="100" data-val="4"></span>
+															<span data-id="100" data-val="5"></span>
+															</div>
+														</div>
+														<div class="channel">etvteluguindia</div>
+														<div class="vide_details"> 
+														<span class="views">246K views</span>
+														<span class="time">12 hours ago</span>
+														<span class="new">NEW</span>
+														
+														</div>
+												</div>
+												
+										</div>
+									 </a>
+								</li>  
+						 	<!-- li loop end here-->
+						 <li>
+							<a href="" >
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1591&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">How to Create a New HTML5 </p>
+											<div class="mediastars">
+															<div class="rating-star">
+															<span data-id="200" data-val="6"></span>
+															<span data-id="200" data-val="7"></span>
+															<span data-id="200" data-val="8"></span>
+															<span data-id="200" data-val="9"></span>
+															<span data-id="200" data-val="10"></span>
+															</div>
+														</div>
+														<div class="channel">etvteluguindia</div>
+														<div class="vide_details"> 
+														<span class="views">246K views</span>
+														<span class="time">12 hours ago</span>
+														<span class="new">NEW</span>
+														
+														</div>
+									</div>
+								</div>
+							 </a>
+						 </li>   
+						 <li data-pid="149237">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/basics-of-code-writing-for-ios-apps/" data-progress="7" data-target="149237">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1589&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">Basics of Code Writing for iOS </p>
+											<div class="mediastars">
+															<div class="rating-star">
+															<span data-id="100" data-val="11"></span>
+															<span data-id="100" data-val="12"></span>
+															<span data-id="100" data-val="13"></span>
+															<span data-id="100" data-val="14"></span>
+															<span data-id="100" data-val="15"></span>
+															</div>
+														</div>
+														<div class="channel">etvteluguindia</div>
+														<div class="vide_details"> 
+														<span class="views">246K views</span>
+														<span class="time">12 hours ago</span>
+														<span class="new">NEW</span>
+														
+														</div>
+									</div>
+								</div>
+							 </a>
+						 </li>  
+						 <li data-pid="151401">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/basic-design-stages-for-ios-apps/" data-progress="8" data-target="151401">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1606&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div>
+									<div class="media-body">
+										<p class="media-heading">Basic Design Stages for iOS</p>
+											<div class="mediastars">
+															<div class="rating-star">
+															<span data-id="100" data-val="1"></span>
+															<span data-id="100" data-val="2"></span>
+															<span data-id="100" data-val="3"></span>
+															<span data-id="100" data-val="4"></span>
+															<span data-id="100" data-val="5"></span>
+															</div>
+														</div>
+														<div class="channel">etvteluguindia</div>
+														<div class="vide_details"> 
+														<span class="views">246K views</span>
+														<span class="time">12 hours ago</span>
+														<span class="new">NEW</span>
+														
+														</div>
+									</div>
+								</div>
+							 </a>
+						 </li> 
+						 
+						 <li data-pid="143980">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/assembling-your-toolkit-for-android-app-development/" data-progress="9" data-target="143980">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1607&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">Assembling Your Toolkit for Android </p>
+											<div class="mediastars">
+															<div class="rating-star">
+															<span data-id="100" data-val="1"></span>
+															<span data-id="100" data-val="2"></span>
+															<span data-id="100" data-val="3"></span>
+															<span data-id="100" data-val="4"></span>
+															<span data-id="100" data-val="5"></span>
+															</div>
+														</div>
+														<div class="channel">etvteluguindia</div>
+														<div class="vide_details"> 
+														<span class="views">246K views</span>
+														<span class="time">12 hours ago</span>
+														<span class="new">NEW</span>
+														
+														</div>
+									</div>
+								</div>
+							 </a>
+						 </li> 
+						 
+						 
+						 <li data-pid="142904">
+							<a href="https://www.dummies.com/web-design-development/css3/using-the-div-tag-to-create-tables/" data-progress="1" data-target="142904" class="active">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1588&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">Using the Div Tag to Create Tables</p>
+									</div>
+								</div>
+							 <span class="progress-bar" style="height: 90.2013%;"></span></a>
+						 </li>  
+						 <li data-pid="204242">
+							<a href="https://www.dummies.com/web-design-development/css3/how-to-create-a-new-html5-file-that-uses-css3-in-komodo-edit/" data-progress="2" data-target="204242">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1598&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">How to Create a New HTML5 File that Uses CSS3…</p>
+									</div>
+								</div>
+							 </a>
+						 </li> 
+						 <li data-pid="162193">
+							<a href="https://www.dummies.com/web-design-development/css3/10-sites-with-great-example-css-layouts/" data-progress="3" data-target="162193">
+								<div class="media"><div class="media-body">
+										<p class="media-heading">10 Sites with Great Example CSS Layouts</p>
+									</div>
+								</div>
+							 </a>
+						 </li>  
+						 <li data-pid="162194">
+							<a href="https://www.dummies.com/web-design-development/css3/how-to-access-multiple-libraries-from-the-google-api/" data-progress="4" data-target="162194">
+								<div class="media"><div class="media-body">
+										<p class="media-heading">How to Access Multiple Libraries from the Google API</p>
+									</div>
+								</div>
+							 </a>
+						 </li> 
+						 <li data-pid="ads" data-progress="4"></li> 
+						 <li data-pid="159526">
+							<a href="https://www.dummies.com/web-design-development/css3/css3-for-dummies-sample-code-files/" data-progress="5" data-target="159526">
+								<div class="media"><div class="media-body">
+										<p class="media-heading">CSS3 For Dummies Sample Code Files</p>
+									</div>
+								</div>
+							 </a>
+						 </li> 		
+
+						 <li data-pid="242664">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/get-effects-snapchat/" data-progress="6" data-target="242664">
+								<div class="media"><div class="media-body">
+										<p class="media-heading">How to Get Effects on Snapchat</p>
+									</div>
+								</div>
+							 </a>
+						 </li>  
+						 
+						 <li data-pid="149237">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/basics-of-code-writing-for-ios-apps/" data-progress="7" data-target="149237">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1608&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">Basics of Code Writing for iOS Apps</p>
+									</div>
+								</div>
+							 </a>
+						 </li>  
+						 
+						 <li data-pid="151401">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/basic-design-stages-for-ios-apps/" data-progress="8" data-target="151401">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1595&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">Basic Design Stages for iOS Apps</p>
+									</div>
+								</div>
+							 </a>
+						 </li> 
+
+						 <li data-pid="143980">
+							<a href="https://www.dummies.com/web-design-development/mobile-apps/assembling-your-toolkit-for-android-app-development/" data-progress="9" data-target="143980">
+								<div class="media"><div class="media-left"><img src="http://dev.wicore.in/wigames/AS?cid=1585&cip=S" class="attachment-featured-thumb size-featured-thumb" alt="" width="50" height="50"></div><div class="media-body">
+										<p class="media-heading">	 Your Toolkit for Android App Development</p>
+									</div>
+								</div>
+							 </a>
+						 </li>
+						 
+						 </ul>
+                
+            </div>
+
+           
+          </div>
+
+       </div> 
+       
+  </div>
+		
+		<!-- login and register popup form -->
+		  <!-- Login / Register Modal-->
+                        <div class="modal fade login-register-form" role="dialog">
+                            <div class="modal-dialog modal-md">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#login-form"> Login <span class="glyphicon glyphicon-user"></span></a></li>
+                                            <li><a data-toggle="tab" href="#registration-form"> Register <span class="glyphicon glyphicon-pencil"></span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                       
+										<div class="col-md-12" style="border-right: 1px dotted #C2C2C2;">
+										 <div class="tab-content">
+                                            <div id="login-form" class="tab-pane fade in active">
+                                                <form class="form-signin">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
+
+              <div class="custom-control custom-checkbox mb-3">
+               
+                <label class="custom-control-label" >Forgot Password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+            </form>
+                                            </div>
+                                            <div id="registration-form" class="tab-pane fade">
+                                                <form action="/">
+                                                    <div class="form-group">
+                                                        <label for="name">Your Name:</label>
+                                                        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="newemail">Email:</label>
+                                                        <input type="email" class="form-control" id="newemail" placeholder="Enter new email" name="newemail">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="newpwd">Password:</label>
+                                                        <input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-default">Register</button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+										
+										</div>
+										
+                                       
+                                    
+                                    </div>
+                       
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+						
+						
+						 <!-- Login / Register Modal 2-->
+                        <div class="modal fade login-register-form2" role="dialog">
+                            <div class="modal-dialog modal-md">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a data-toggle="tab" href="#login-form"> Login2 <span class="glyphicon glyphicon-user"></span></a></li>
+                                            <li><a data-toggle="tab" href="#registration-form"> Register2 <span class="glyphicon glyphicon-pencil"></span></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="row">
+                                       
+										<div class="col-md-12" >
+										 <div class="tab-content">
+                                            <div id="login-form" class="tab-pane fade in active">
+                                                <form class="form-signin">
+												
+       
+        <input name="u" placeholder="Username" required="required" type="text">
+		  <input name="p" placeholder="Password" required="required" type="password">
+               <button type="submit" class="btn btn-primary btn-block btn-large">Sigin in</button> 
+
+              <div class="custom-control mb-3">
+               
+                <label class="custom-control-label" >Forgot Password</label>
+              </div>
+           
+              <hr class="my-4">
+              <button class="btn btn-block btn-large btn-google text-uppercase" type="submit"><i class="fab fa-google mr-2"></i> Sign in with Google</button></br>
+              <button class="btn btn-block btn-large btn-facebook text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i> Sign in with Facebook</button>
+            </form>
+                                            </div>
+                                            <div id="registration-form" class="tab-pane fade">
+                                                <form action="/">
+                                                    <div class="form-group">
+                                                        <label for="name">Your Name:</label>
+                                                        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="newemail">Email:</label>
+                                                        <input type="email" class="form-control" id="newemail" placeholder="Enter new email" name="newemail">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="newpwd">Password:</label>
+                                                        <input type="password" class="form-control" id="newpwd" placeholder="New password" name="newpwd">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-default">Register</button>
+                                                </form>
+                                            </div>
+
+                                        </div>
+										
+										</div>
+										
+                                       
+                                    
+                                    </div>
+                       
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+		
+    
+    <script>
+	<!-- start rating code -->
+    $(function () {
+
+        // ---------------------------- page.load() -------------------------
+        var artaraxRatingStar = $.artaraxRatingStar({
+            onClickCallBack: onRatingStar
+        });
+
+        function onRatingStar(rate, id) {
+            alert("data-val(rate)=" + rate + " data-id(ProductId)=" + id);
+        }
+
+    });
+    </script>
+ 
+  </body>
+</html>

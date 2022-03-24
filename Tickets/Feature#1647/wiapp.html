@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script>
+			function OnMenu(name){
+				var form = document.getElementById("myform_"+name);
+				console.log("name: "+name);
+				//form.action = "https://dev.wicore.in/wiapp/Index";
+				form.submit();
+				}
+		</script>
+	</head>
+	<body>
+		<form id = "myform_Arcade" method = "POST" name = "myform_Arcade" action = "https://dev.wicore.in/wiapp/Index">
+		<input type = "name", name = "qs" type="hidden" value = '[{"sp_id":"2","sp_name":"WiApp","data":{"CATEGORIES":"2"}}]' />
+		<input type = "name", name = "service_id" type = "hidden" value = "2" />
+		<input type = "name", name = "page" type = "hidden" value = "I" />
+		<input type = "name", name = "cust_id" type = "hidden" value = "10" />
+			<a onclick="OnMenu('Arcade')">Arcade</a>
+		
+		</form>
+	</body>
+</html>

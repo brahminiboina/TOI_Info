@@ -1,0 +1,31 @@
+body{
+padding:0;margin:0;background:#fff;
+}
+.header{
+	background:#fff;height:50;width:100%; margin:0 auto;text-align:center;font-family: Century Gothic; position: relative;
+}
+.head_inner{
+	font-size: 15px;font-weight: 700;color:#fff;padding:10px 0px;text-decoration:none; background-image:linear-gradient(to right,rgba(120,236,222),rgba(80,202,237));;
+	}
+.content_div{
+		text-align: center;font-family: Century Gothic;margin: 0 auto;display:inline-block;width:100%;
+			}
+			.content_div a{
+				text-align: center;margin: 0 auto;display:block;
+			}
+h2{
+	font-size: 12px;font-weight:bold;color:#43494f;margin-bottom: 10px; display:inline-block
+}
+h3{
+	font-size: 12px;font-weight:bold;color:#000;margin:5px 0px;
+	
+}
+
+.bottom a{margin: 0 auto;border-radius: 5px; display: block;font-size: 13px;font-weight: 700;text-decoration: none;background-image:linear-gradient(to right,rgba(120,236,222),rgba(80,202,237)); text-align:center; height:25px;width:180px; color:ivory;line-height: 23px;}
+.bottom{
+	text-align: center;font-family: Century Gothic;position: ;margin: 0 auto;bottom:1%;left: 0;right: 0 
+}
+.sub_be{
+	height:25px;width:250px;
+	background-image:linear-gradient(to right,rgba(50,105,252),rgba(24,178,248));border-radius: 10px;font-family: Century Gothic;font-size: 10px;font-weight:bold;color:#fff;text-decoration:none;text-shadow: 1px 2px 1px rgba(0,0,0,0.9);line-height: 24px; margin: 0 auto
+}
