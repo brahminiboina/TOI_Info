@@ -1,0 +1,22 @@
+case:1  Cookies deleted and msisdn header disable.
+---------------------------------------------------
+-> Here cookie doesn't exist and it is inserted in the cookie_info table.  '7d3b33f2d3b29', '39164951000' 
+-> wi_msisdn_info and wi_user_info table is empty									
+-> Click on content.
+	--> Here again checks for user_id in cookie_info table, it exists now, then it will fetch the userid(39164951000) based on cookie_id(7d3b33f2d3b29)
+	-->Here license doesn't exist. So it goes for billing using billing links
+
+
+case:2 Cookies deleted and msisdn header enable.
+------------------------------------------------
+-> Here cookie doesn't exist and it is inserted in the cookie_info table along with the user_id. '7d3b33e548e68', '39163531000' 
+-> msisdn also doesn't exists and it is inserted in the wi_msisdn_info table along with the user_id. 912876567891, 39163531000
+-> click on content.
+	--> Here user_id(39163531000) is fetched from cookie_info based on cookie_id = '7d3b33e548e68'
+	--> Here license doesn't exist. So it goes for billing using billing links
+
+case:3 cookies exists and msisdn header enabled.
+------------------------------------------------
+-> Here cookie exists and the user_id is fetched from coookie_info based on cookie_id = '7d3b33e548e68'
+-> Here msisdn also exists.
+-> again checks userid and checks for license. Doesn't exist then it goes for billing.

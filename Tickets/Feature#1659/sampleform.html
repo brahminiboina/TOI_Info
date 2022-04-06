@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title> Form sample</title>
+		<script type="text/javascript">
+			function surprise(){
+			 var idToken = "GToken";
+				console.log("entered into form");
+				var form = document.createElement("form");
+				
+				
+				 
+				form.setAttribute("method", "POST");
+				form.setAttribute("action", "https://dev.wicore.in/wiapp/Index");
+				console.log("entered into inputEle");
+				var inputEle = document.createElement("input");
+				inputEle.setAttribute("type", "hidden");
+				inputEle.setAttribute("name", "idToken");
+				inputEle.setAttribute("id", "idToken");
+				inputEle.setAttribute("value", idToken);
+				console.log("entered into inputEle: " +inputEle+ " form: " +form);
+				form.appendChild(inputEle);
+				document.body.appendChild(form);
+				form.submit();
+			}
+		</script>
+	</head>
+	<body>
+		<input type ="submit" name = "submit" onclick = "surprise()"></input>
+	</body>
+</html>
