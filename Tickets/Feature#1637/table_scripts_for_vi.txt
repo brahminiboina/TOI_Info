@@ -1,0 +1,33 @@
+Update script for token_config:
+-------------------------------
+
+Update token_config set token_url = 'https://103.75.248.239:7509/generateAccessToken' where token_type='MT_Message';
+
+
+New Table creation script for operator_credentials:
+---------------------------------------------------------------------
+
+CREATE TABLE `operator_credentials` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `op_id` int(10) DEFAULT NULL,
+  `merchant_id` int(10) DEFAULT NULL,
+  `shortcode` varchar(50) DEFAULT NULL,
+  `sms_billing_url` varchar(500) DEFAULT NULL,
+  `sen_username` varchar(100) DEFAULT NULL,
+  `sen_password` varchar(100) DEFAULT NULL,
+  `username` varchar(100) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `message_type` varchar(200) DEFAULT NULL,
+  `bill_type` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+insertion script for operator_credentials:
+------------------------------------------------------------
+
+insert into `operator_credentials`(`id`,`op_id`,`merchant_id`,`shortcode`,`sms_billing_url`,`sen_username`,`sen_password`,`username`,`password`,`message_type`,`bill_type`) values (1,16,212,'55321','https://103.75.248.239:7544/sendSmsMSDP_SV','55321gm','Ruidy82v','WicoreUser','aaymj0uktl645tphmnkvcqu2yz66ixpi','MT_Message','SMS');
+insert into `operator_credentials`(`id`,`op_id`,`merchant_id`,`shortcode`,`sms_billing_url`,`sen_username`,`sen_password`,`username`,`password`,`message_type`,`bill_type`) values (2,16,205,'54767','https://103.75.248.239:7544/sendSmsMSDP_SV','wicoremt','Etl@1smx','WicoreUser','aaymj0uktl645tphmnkvcqu2yz66ixpi','MT_Message','SMS');
+
+
+

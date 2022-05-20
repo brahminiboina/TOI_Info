@@ -1,0 +1,28 @@
+Check Balance credentials for both Vi and Voda_Idea: [group_cbs]
+----------------------------------------------------------------
+1. Voda_Idea:
+------------
+	access token [gc_voda_to_idea_token_url] - https://103.75.248.239:7509/generateAccessToken
+	balance check url [gc_voda_to_idea_balance_check_url] - https://103.75.248.239:7524/GetBalanceStatus
+	voda_idea_credentials [gc_voda_to_idea_credentials] - client_secret=ae718ab71972c624a5f6ec63d0dfb702&client_id=VIL_EAI_OAUTH_CP_ID&system=WICORE&wicore_ip=182.18.180.101
+2. Vi:
+-------
+	access token [gc_voda_to_idea_token_url] - https://103.75.248.239:7509/generateAccessToken
+	balance check url [gc_voda_to_idea_balance_check_url]  - https://103.75.248.239:7524/GetBalanceStatus 
+	voda_idea_credentials [gc_voda_to_idea_credentials] - client_secret=ae718ab71972c624a5f6ec63d0dfb702&client_id=VIL_EAI_OAUTH_CP_ID&system=WICORE&wicore_ip=182.18.180.101
+	
+Requirement credentials:
+-----------------------
+service name - sendSmsMSDP_SV
+token url - https://103.75.248.239:7509/generateAccessToken
+service url - https://103.75.248.239:7544/sendSmsMSDP_SV
+username - WicoreUser
+password - aaymj0uktl645tphmnkvcqu2yz66ixpi
+
+MT credentials for Vi:
+----------------------
+credentials - [credentials from token_config] client_Secret=48bf23030b61164d451793c0b183f0ed&client_id=VIL_EAI_OAUTH_ID&system=WICORE&wicore_ip=182.18.180.101 
+token url  [token_url from token_config] - https://103.75.248.240:9050/generateAccessToken  
+username [gc_sms_billing_auth_info from group_cbs] - sdpmgeaimt 	
+password gc_sms_billing_auth_info from group_cbs] - dN9B@eUT		[
+service name - sendSmsMSDP [soap]

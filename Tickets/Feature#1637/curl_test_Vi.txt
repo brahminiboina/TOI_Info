@@ -1,0 +1,114 @@
+ 54767
+    MT Request
+    [root@nwsrv4 nagaraju]# curl --header 'Authorization:Bearer AAIQVklMX0VBSV9PQVVUSF9JROyon1nfyHJ1AJFZXnYdvLH9fa8nnD3rHhb7IseBQbPeImu-u3IA2h1rCf7UQ_AXPBb4iFqXqI2kzc7D4bkgBG51h0TppGRUdHjCbc85kOdfS3Z_Vq2-y-enKoxyslgrqg' --header 'Content-Type:text/xml;charset=UTF-8' --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://eai.vodafone.com/sendSmsMSDP" xmlns:met="http://eai.vodafone.com/MetaInfoReq"><soapenv:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken><wsse:Username>WicoreUser</wsse:Username><wsse:Password>aaymj0uktl645tphmnkvcqu2yz66ixpi</wsse:Password></wsse:UsernameToken></wsse:Security></soapenv:Header><soapenv:Body><sen:SendSmsMSDPRequest><sen:MetaInfo><met:ConsumerReqInfo><met:circleId>23</met:circleId><met:serviceName>sendSmsMSDP_SV</met:serviceName><met:channelName>WICORE</met:channelName><met:segment>PREPAID</met:segment><met:key>123</met:key><met:version>1.0</met:version></met:ConsumerReqInfo></sen:MetaInfo><sen:SRVsendSmsMSDPReq><sen:requestType>SMSSubmitReq</sen:requestType><sen:userName>wicoremt</sen:userName><sen:password>Etl@1smx</sen:password><sen:mobileNumber>9700425814</sen:mobileNumber><sen:message>Hello Vi</sen:message><sen:originAddress>54767</sen:originAddress><sen:type>0</sen:type></sen:SRVsendSmsMSDPReq></sen:SendSmsMSDPRequest></soapenv:Body></soapenv:Envelope>' -v -k 'https://103.75.248.239:7544/sendSmsMSDP_SV'
+    MT Response
+* About to connect() to 103.75.248.239 port 7544 (#0)
+*   Trying 103.75.248.239... connected
+* Connected to 103.75.248.239 (103.75.248.239) port 7544 (#0)
+* Initializing NSS with certpath: sql:/etc/pki/nssdb
+* warning: ignoring value of ssl.verifyhost
+* skipping SSL peer certificate verification
+* SSL connection using TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+* Server certificate:
+*       subject: CN=coalesce.vodafoneidea.com,O=Vodafone Idea Limited,L=Mumbai,ST=Maharashtra,C=IN
+*       start date: Aug 11 00:00:00 2021 GMT
+*       expire date: Aug 27 23:59:59 2022 GMT
+*       common name: coalesce.vodafoneidea.com
+*       issuer: CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
+> POST /sendSmsMSDP_SV HTTP/1.1
+> User-Agent: curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.27.1 zlib/1.2.3 libidn/1.18 libssh2/1.4.2
+> Host: 103.75.248.239:7544
+> Accept: */*
+> Authorization:Bearer AAIQVklMX0VBSV9PQVVUSF9JROyon1nfyHJ1AJFZXnYdvLH9fa8nnD3rHhb7IseBQbPeImu-u3IA2h1rCf7UQ_AXPBb4iFqXqI2kzc7D4bkgBG51h0TppGRUdHjCbc85kOdfS3Z_Vq2-y-enKoxyslgrqg
+> Content-Type:text/xml;charset=UTF-8
+> Content-Length: 1168
+> Expect: 100-continue
+>
+< HTTP/1.1 100 Continue
+< X-Note: Gateway Ack
+< HTTP/1.1 200 OK
+< X-Backside-Transport: OK OK,OK OK
+< Connection: Keep-Alive
+< Transfer-Encoding: chunked
+< Content-Type: text/xml
+< Date: Thu, 10 Feb 2022 10:06:57 GMT
+< X-Global-Transaction-ID: 6a2cf4d16204e3c14f90b20d
+<
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://eai.vodafone.com/sendSmsMSDP" xmlns:met="http://eai.vodafone.com/MetaInfoResp">
+<soapenv:Header/>
+<soapenv:Body>
+<sen:SendSmsMSDPResponse>
+<sen:MetaInfo>
+<met:ConsumerReqInfo>
+<met:circleId>23</met:circleId>
+<met:serviceName>sendSmsMSDP_SV</met:serviceName>
+<met:channelName>WICORE</met:channelName>
+<met:segment>PREPAID</met:segment>
+<met:key>123</met:key>
+<met:version>1.0</met:version></met:ConsumerReqInfo>
+<met:StatusInfo>
+<met:errorCode>VEAI00000I</met:errorCode>
+<met:errorStatus>0</met:errorStatus>
+<met:errorDesc>The Request has been processed Successfully</met:errorDesc>
+* Connection #0 to host 103.75.248.239 left intact
+* Closing connection #0
+<met:errorCategory>SUCCESS</met:errorCategory></met:StatusInfo></sen:MetaInfo></sen:SendSmsMSDPResponse></soapenv:Body></soapenv:Envelope>[root@nwsrv4 nagaraju]#
+
+
+   55321
+   MT Request
+   [root@nwsrv4 nagaraju]# curl --header 'Authorization:Bearer AAIQVklMX0VBSV9PQVVUSF9JRCvEOmADuViCh12coAVX9qqSU14Jcuglc6JL7SZ2cBFzkcsrCPgbHvC9milKcwtzlu-1MVbvEMmaV5ZsRqgEitLe9EW512sXWyiHuieqvnCzpdbYEf0UiozcSm5mtHO-ew' --header 'Content-Type:text/xml;charset=UTF-8' --data '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://eai.vodafone.com/sendSmsMSDP" xmlns:met="http://eai.vodafone.com/MetaInfoReq"><soapenv:Header><wsse:Security xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><wsse:UsernameToken><wsse:Username>WicoreUser</wsse:Username><wsse:Password>aaymj0uktl645tphmnkvcqu2yz66ixpi</wsse:Password></wsse:UsernameToken></wsse:Security></soapenv:Header><soapenv:Body><sen:SendSmsMSDPRequest><sen:MetaInfo><met:ConsumerReqInfo><met:circleId>23</met:circleId><met:serviceName>sendSmsMSDP_SV</met:serviceName><met:channelName>WICORE</met:channelName><met:segment>PREPAID</met:segment><met:key>123</met:key><met:version>1.0</met:version></met:ConsumerReqInfo></sen:MetaInfo><sen:SRVsendSmsMSDPReq><sen:requestType>SMSSubmitReq</sen:requestType><sen:userName>55321gm</sen:userName><sen:password>Ruidy82v</sen:password><sen:mobileNumber>9700425814</sen:mobileNumber><sen:message>Hello Vi</sen:message><sen:originAddress>55321</sen:originAddress><sen:type>0</sen:type></sen:SRVsendSmsMSDPReq></sen:SendSmsMSDPRequest></soapenv:Body></soapenv:Envelope>' -v -k 'https://103.75.248.239:7544/sendSmsMSDP_SV'
+  MT Response
+* About to connect() to 103.75.248.239 port 7544 (#0)
+*   Trying 103.75.248.239... connected
+* Connected to 103.75.248.239 (103.75.248.239) port 7544 (#0)
+* Initializing NSS with certpath: sql:/etc/pki/nssdb
+* warning: ignoring value of ssl.verifyhost
+* skipping SSL peer certificate verification
+* SSL connection using TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA
+* Server certificate:
+*       subject: CN=coalesce.vodafoneidea.com,O=Vodafone Idea Limited,L=Mumbai,ST=Maharashtra,C=IN
+*       start date: Aug 11 00:00:00 2021 GMT
+*       expire date: Aug 27 23:59:59 2022 GMT
+*       common name: coalesce.vodafoneidea.com
+*       issuer: CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1,O=DigiCert Inc,C=US
+> POST /sendSmsMSDP_SV HTTP/1.1
+> User-Agent: curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.27.1 zlib/1.2.3 libidn/1.18 libssh2/1.4.2
+> Host: 103.75.248.239:7544
+> Accept: */*
+> Authorization:Bearer AAIQVklMX0VBSV9PQVVUSF9JRCvEOmADuViCh12coAVX9qqSU14Jcuglc6JL7SZ2cBFzkcsrCPgbHvC9milKcwtzlu-1MVbvEMmaV5ZsRqgEitLe9EW512sXWyiHuieqvnCzpdbYEf0UiozcSm5mtHO-ew
+> Content-Type:text/xml;charset=UTF-8
+> Content-Length: 1167
+> Expect: 100-continue
+>
+< HTTP/1.1 100 Continue
+< X-Note: Gateway Ack
+< HTTP/1.1 200 OK
+< X-Backside-Transport: OK OK,OK OK
+< Connection: Keep-Alive
+< Transfer-Encoding: chunked
+< Content-Type: text/xml
+< Date: Thu, 10 Feb 2022 10:22:43 GMT
+< X-Global-Transaction-ID: 15407bde6204e7733b92f571
+<
+
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://eai.vodafone.com/sendSmsMSDP" xmlns:met="http://eai.vodafone.com/MetaInfoResp">
+<soapenv:Header/>
+<soapenv:Body>
+<sen:SendSmsMSDPResponse>
+<sen:MetaInfo>
+<met:ConsumerReqInfo>
+<met:circleId>23</met:circleId>
+<met:serviceName>sendSmsMSDP_SV</met:serviceName>
+<met:channelName>WICORE</met:channelName>
+<met:segment>PREPAID</met:segment>
+<met:key>123</met:key>
+<met:version>1.0</met:version></met:ConsumerReqInfo>
+<met:StatusInfo>
+<met:errorCode>VEAI00000I</met:errorCode>
+<met:errorStatus>0</met:errorStatus>
+<met:errorDesc>The Request has been processed Successfully</met:errorDesc>
+* Connection #0 to host 103.75.248.239 left intact
+* Closing connection #0
+<met:errorCategory>SUCCESS</met:errorCategory></met:StatusInfo></sen:MetaInfo></sen:SendSmsMSDPResponse></soapenv:Body></soapenv:Envelope>[root@nwsrv4 nagaraju]#
