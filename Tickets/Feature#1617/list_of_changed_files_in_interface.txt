@@ -1,0 +1,25 @@
+Files that are created for WiPay backup reports:
+Java files:
+-----------
+	1. DataBasePartition.java	[for server memory stats command passing]
+	2. WipayBackupReport.java	[for taking backup of tables]
+	3. WiPayBackupUtility.java	[for connecting to separate servers]
+		
+Jsp files:
+-----------
+	1. WipayBackupReport.jsp	[for displaying server data stats & records from wipay_backup_tables]
+	2. WipayBackupReportAdd.jsp	[for adding list of data that is required to store in wipay_backup_tables to take backup whenever required]
+	3. WipayBackupReportAddDb.jsp	[used to write insert query for adding the data in to table]
+	4. WipayBackupReportOnFly.jsp	[interface that is used to take the backup manually of a single table when required.]
+	5. WipayBackupReportOnFlyDb.jsp	[used to get the parameters from fly and to call a method that takes the backup by passing these parameters.And redirects to WipayBackupReport[home page] when the backup is successful]
+	6. WipayBackupReportValidateDestTable.jsp	[Is used to display source and destination table min and max timestamps using ajax(onblur function)]
+	7. WipayBackupReportIndexColumns.jsp	[is used to populate the index columns of source and destination table automatically using ajax and jquey (OnChange function)]
+	8. WipayBackupReportDestServer.jsp	[is used to populate the database and table name of destination server automatically using ajax and jquey (OnChange function)]
+	
+html files:
+-------------
+	1. WipayBackupReportHelp.html [explanation of data stats and columns in the interface]
+	2. WipayBackupReportAddHelp.html [explanation of each column in the interface and wipay_backup_tables with examples]
+	3. WipayBackupReportOnFlyHelp.html [explanation of each column in the interface with examples]
+
+
